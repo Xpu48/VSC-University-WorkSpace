@@ -1,0 +1,122 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Current File",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": [
+              "--runTestsByPath",
+              "${relativeFile}",
+              "--config",
+              "jest.config.js"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "windows": {
+              "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+            }
+          },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Lab1Ex1",
+            "request": "launch",
+            "mainClass": "Lab1Ex.Lab1Ex1",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab1Ex2",
+            "request": "launch",
+            "mainClass": "Lab1Ex.Lab1Ex2",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab1Ex3",
+            "request": "launch",
+            "mainClass": "Lab1Ex.Lab1Ex3",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab1Ex4",
+            "request": "launch",
+            "mainClass": "Lab1Ex.Lab1Ex4",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab2Ex1",
+            "request": "launch",
+            "mainClass": "Lab2Ex.Lab2Ex1",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab2Ex2",
+            "request": "launch",
+            "mainClass": "Lab2Ex.Lab2Ex2",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "ExPet",
+            "request": "launch",
+            "mainClass": "Lab3Ex.ExPet",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab3Ex1",
+            "request": "launch",
+            "mainClass": "Lab3Ex.Lab3Ex1",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Lab4Ex.Main",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab5Ex1",
+            "request": "launch",
+            "mainClass": "Lab5Ex.Lab5Ex1",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab5Ex2",
+            "request": "launch",
+            "mainClass": "Lab5Ex.Lab5Ex2",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Lab5Ex3",
+            "request": "launch",
+            "mainClass": "Lab5Ex.Lab5Ex3",
+            "projectName": "VSC Project_bdafacc4"
+        },
+        {
+            "type": "java",
+            "name": "Laba5Ex4",
+            "request": "launch",
+            "mainClass": "Lab5Ex.Laba5Ex4",
+            "projectName": "VSC Project_bdafacc4"
+        }
+    ]
+}
