@@ -5,22 +5,29 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Lab2Ex6",
+            "request": "launch",
+            "mainClass": "Lab2Ex.Lab2Ex6",
+            "projectName": "VSC-University-WorkSpace_22f6cdef"
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Jest Current File",
             "program": "${workspaceFolder}/node_modules/.bin/jest",
             "args": [
-              "--runTestsByPath",
-              "${relativeFile}",
-              "--config",
-              "jest.config.js"
+                "--runTestsByPath",
+                "${relativeFile}",
+                "--config",
+                "jest.config.js"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "windows": {
-              "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+                "program": "${workspaceFolder}/node_modules/jest/bin/jest"
             }
-          },
+        },
         {
             "type": "java",
             "name": "Current File",
