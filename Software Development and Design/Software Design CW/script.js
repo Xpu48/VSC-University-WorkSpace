@@ -236,6 +236,47 @@ function CheckCountry(country) {
   return country;
 }
 
+// Form validation function
+function validateForm() {
+  try {
+    const title = CheckTitle(document.getElementById('title').value);
+    const firstName = CheckFirstName(document.getElementById('firstName').value);
+    const lastName = CheckLastName(document.getElementById('lastName').value);
+    const email = CheckEmail(document.getElementById('email').value);
+    const dob = CheckDateOfBirth(document.getElementById('dob').value);
+    const age = CheckAge(document.getElementById('age').value);
+    const address = CheckAddress(document.getElementById('address').value);
+    const country = CheckCountry(document.getElementById('country').value);
+
+    // If all validations pass, return true
+    return true;
+  } catch (error) {
+    alert(error.message);
+    return false;
+  }
+}
+
+// Ensure the DOM is fully loaded before attaching the event listener
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM fully loaded and parsed");
+  const form = document.getElementById('validationForm');
+  if (form) {
+    console.log("Form found:", form);
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      if (validateForm()) {
+        // Redirect to the thank you page if the form is valid
+        window.location.href = 'thankyou.html';
+      }
+    });
+  } else {
+    console.error("Form with ID 'validationForm' not found.");
+  }
+});
+
+
+
 // This was the only way I could find to not get an error when opening the website
 // Turns the functions to become global
 window.CheckEmail = CheckEmail;
@@ -246,6 +287,7 @@ window.CheckCountry = CheckCountry;
 window.CheckFirstName = CheckFirstName;
 window.CheckLastName = CheckLastName;
 window.CheckTitle = CheckTitle;
+window.validateForm = validateForm;
 
 // exports for testin
 if (typeof module !== "undefined" && module.exports) {
@@ -258,5 +300,6 @@ if (typeof module !== "undefined" && module.exports) {
     CheckAge,
     CheckAddress,
     CheckCountry,
+    validateForm
   };
 }

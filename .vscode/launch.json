@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "CWProject"
+        },
+        {
+            "type": "java",
             "name": "Lab2Ex6",
             "request": "launch",
             "mainClass": "Lab2Ex.Lab2Ex6",

@@ -1,4 +1,4 @@
-const { CheckTitle, CheckFirstName, CheckLastName, CheckEmail, CheckDateOfBirth, CheckAddress } = require('./script');
+const { CheckTitle, CheckFirstName, CheckLastName, CheckEmail, CheckDateOfBirth, CheckAddress, validateForm } = require('./script');
 
 // Mock the validEmailDomains variable
 global.validEmailDomains = ["gmail.com", "yahoo.com", "outlook.com"];
