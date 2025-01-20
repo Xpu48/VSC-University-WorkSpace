@@ -9,6 +9,13 @@
       "name": "LinkedList",
       "request": "launch",
       "mainClass": "LinkedList",
+      "projectName": "VSC-University-WorkSpace_22f6cdef"
+    },
+    {
+      "type": "java",
+      "name": "LinkedList",
+      "request": "launch",
+      "mainClass": "LinkedList",
       "projectName": "VSC-University-WorkSpace_fc2c720f"
     },
     {

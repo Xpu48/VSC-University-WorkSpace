@@ -26,8 +26,25 @@ class LinkedList {
 
        // Return the modified list 
         return list; 
-    } 
-  
+    }
+
+    public static LinkedList insert_end(LinkedList list, int data)
+    {
+        Node newNode = new Node(data);
+        Node tmp = list.head;
+        if(tmp == null)
+        {
+            list.head = newNode;
+            return list;
+        }
+        while(tmp.next != null)
+        {
+            tmp = tmp.next;
+        }
+        tmp.next = newNode;
+        return list;
+    }
+
     //Display the content of the linked list 
     public static void printList(LinkedList list) 
     { 
@@ -87,7 +104,35 @@ class LinkedList {
         }
         System.out.println("The number " + x + " appears " + count + " times in the list");
       }
+
+      public static int max(LinkedList list){
+        Node tmp = list.head;
+        int max = Integer.MIN_VALUE;
+        while(tmp != null){
+          if (tmp.data > max){
+            max = tmp.data;
+          }
+          tmp = tmp.next;
+        }
+        return max;
+      }
     
+      public static void TrueOrFalse(LinkedList list, int x){
+        Node tmp = list.head;
+        while(tmp != null){
+          if (tmp.data == x){
+            System.out.println("True");
+            return;
+          }
+          tmp = tmp.next;
+        }
+        System.out.println("False");
+      }
+
+    public static LinkedList deleteAll(LinkedList list){
+        list.head = null;
+        return list;
+    }
 
     //Delete the first element with data part equal to x
     public static LinkedList delete(LinkedList list, int x)
@@ -130,7 +175,7 @@ class LinkedList {
 }
 
 
-   
+
     public static void main(String[] args) 
     { 
         //create a new list
@@ -150,7 +195,12 @@ class LinkedList {
          System.out.println("3: Print the content of the list");
          System.out.println("4: Print the length of the list");
          System.out.println("5: Print specific amount of elements from the list");
-         System.out.println("Enter a element from the list to show duplicates");
+         System.out.println("6: Enter a element from the list to show duplicates");
+         System.out.println("7: True or False if x is in the list");
+         System.out.println("8: Insert an element to the end of the list");
+         System.out.println("9: Delete all the element of the list");
+         System.out.println("10: Return the Max value of the list");
+         System.out.println("11: Delete the first element of the list");
     
          option=in.nextInt();
          if(option==1)
@@ -187,6 +237,39 @@ class LinkedList {
             x = in.nextInt();
             showDuplicates(list, x);
         }
+        
+        if (option == 7)
+        {
+            System.out.println("Enter a number to check if it is in the list");
+            x = in.nextInt();
+            TrueOrFalse(list, x);
+        }
+        
+        if (option == 8)
+        {
+            System.out.println("What number do you want to insert?");
+            x = in.nextInt();
+            list = insert_end(list, x);
+            printList(list);
+        }
+
+        if (option == 9)
+        {
+            list = deleteAll(list);
+            printList(list);
+        }
+
+        if (option == 10)
+        {
+            System.out.println("The max value of the list is: " + max(list));
+        }
+
+        if (option == 11)
+        {
+            list = delete(list, list.head.data);
+            printList(list);
+        }
+
 
         if(option==0)
           System.out.println("Good bye!"); 
