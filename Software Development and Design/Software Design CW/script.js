@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const countrySelect = document.getElementById("country"); // Get the select element
         data.forEach((country) => {
           const option = document.createElement("option"); // Create an option choice for each country
-          option.value = country.cca2; //
+          option.value = country.cca2;
           option.text = country.name.common;
           countrySelect.appendChild(option);
         });
@@ -236,7 +236,7 @@ function CheckCountry(country) {
   return country;
 }
 
-// Form validation function
+// Form validation function checking all validation functions and turning true if they all have passed
 function validateForm() {
   try {
     const title = CheckTitle(document.getElementById('title').value);
@@ -248,7 +248,7 @@ function validateForm() {
     const address = CheckAddress(document.getElementById('address').value);
     const country = CheckCountry(document.getElementById('country').value);
 
-    // If all validations pass, return true
+    // If all validations pass return true
     return true;
   } catch (error) {
     alert(error.message);
@@ -258,12 +258,12 @@ function validateForm() {
 
 // Ensure the DOM is fully loaded before attaching the event listener
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("DOM fully loaded and parsed");
+  console.log("DOM fully loaded and parsed"); // This was me checking if the DOM was loaded for debugging
   const form = document.getElementById('validationForm');
   if (form) {
-    console.log("Form found:", form);
+    console.log("Form found:", form); // This was also for debugging turned out this was working fine and I put the ID in HTML in the wrong place
     form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission
+      event.preventDefault();
 
       if (validateForm()) {
         // Redirect to the thank you page if the form is valid
@@ -289,7 +289,7 @@ window.CheckLastName = CheckLastName;
 window.CheckTitle = CheckTitle;
 window.validateForm = validateForm;
 
-// exports for testin
+// exports for testing in jest
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     CheckTitle,
