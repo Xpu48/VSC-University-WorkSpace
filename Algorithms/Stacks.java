@@ -13,9 +13,16 @@ class Stacks {
         } 
     } 
 
+
    //PUSH inserts an element at the end of the stack
    public static Stacks PUSH(Stacks list, int data) 
     {
+        return insert_start(list, data);
+    }
+
+   //Insert node at the beginning of the list 
+   public static Stacks insert_start(Stacks list, int data) 
+    { 
         // We create the new node 
         Node newNode = new Node(data); 
   
@@ -70,7 +77,7 @@ class Stacks {
            while (tmp != null) { 
             // Print the data at current node 
             System.out.print(tmp.data); 
-    
+   
             // Move to next node 
             tmp = tmp.next; 
             if(tmp!= null)
@@ -80,7 +87,64 @@ class Stacks {
         }
         else
            System.out.println("The list is empty");
+    } 
+   
+    // Calculate the length of the linked list
+    public static int length(Stacks list){
+        Node tmp = list.head;
+        int count = 0;
+        while(tmp != null){
+          count++;
+          tmp = tmp.next;
+        }
+        return count;
     }
+
+    public static Stacks deleteAll(Stacks list){
+        list.head = null;
+        return list;
+    }
+
+    //Delete the first element with data part equal to x
+    public static Stacks delete(Stacks list, int x)
+   {
+     Node tmp=list.head;
+     Node prev;
+
+     if(tmp==null)
+         {System.out.println("There is nothing to delete");
+         return list; }
+      else
+      {
+
+         //Case 1: x is found in the first node
+         if(tmp.data==x)
+         {
+          list.head=tmp.next; //head points to the second element
+          return list;
+         }
+
+         else   //Case 2: X is not in the first position, we must keep searching
+         {
+         prev=tmp;
+         tmp=tmp.next;
+         while(tmp!=null)
+          {
+             if(tmp.data==x)
+              {
+                 prev.next=tmp.next;
+                 return list;
+               }
+             prev=tmp;
+             tmp=tmp.next;
+           }   
+          }
+         System.out.println("Element not found");
+        return list;
+    }
+
+}
+
 
 
     public static void main(String[] args) 
@@ -107,7 +171,7 @@ class Stacks {
          {
            System.out.println("What number do you want to insert?");
            x=in.nextInt();
-           list=PUSH(list, x);
+           list=insert_start(list, x);
            printList(list);
          }
 

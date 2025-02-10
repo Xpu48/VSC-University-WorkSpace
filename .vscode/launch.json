@@ -6,20 +6,6 @@
   "configurations": [
     {
       "type": "java",
-      "name": "rubberduck",
-      "request": "launch",
-      "mainClass": "May.rubberduck",
-      "projectName": "VSC-University-WorkSpace_22f6cdef"
-    },
-    {
-      "type": "java",
-      "name": "Wk2Ex3",
-      "request": "launch",
-      "mainClass": "May.Wk2Ex3",
-      "projectName": "VSC-University-WorkSpace_22f6cdef"
-    },
-    {
-      "type": "java",
       "name": "Stacks",
       "request": "launch",
       "mainClass": "Stacks",
