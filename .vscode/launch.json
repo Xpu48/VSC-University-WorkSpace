@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "BinarySearchTree",
+      "request": "launch",
+      "mainClass": "BinarySearchTree",
+      "projectName": "VSC-University-WorkSpace_22f6cdef"
+    },
+    {
+      "type": "java",
       "name": "Stacks",
       "request": "launch",
       "mainClass": "Stacks",

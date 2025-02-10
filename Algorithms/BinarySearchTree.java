@@ -149,36 +149,33 @@ class Node {
 		spacingBuffer--;
 	}
 
-	public boolean search(int x){
-		
-		boolean ifFound = false;
-
-		if (data == x){
+	public boolean search(int x) {
+		if (data == x) {
 			System.out.println("Found " + x);
-			ifFound = true;
+			return true;
 		}
-		if (data > x){
-			if (left != null){
-				left.search(x);
-			}
-			else{
+		if (data > x) {
+			if (left != null) {
+				return left.search(x);
+			} else {
 				System.out.println("Not found");
-				ifFound = false;
+				return false;
 			}
-		}
-		else{
-			if (right != null){
-				right.search(x);
-				ifFound = false;
-			}
-			else{
+		} else {
+			if (right != null) {
+				return right.search(x);
+			} else {
 				System.out.println("Not found");
-				ifFound = false;
+				return false;
 			}
 		}
-		return ifFound;
-	
 	}
+
+	public int sum() {
+        int leftSum = (left != null) ? left.sum() : 0;
+        int rightSum = (right != null) ? right.sum() : 0;
+        return data + leftSum + rightSum;
+    }
 
 
 	/**
@@ -325,7 +322,8 @@ class BinarySearchTree{
 			System.out.println("4: Traverse post order");
 			System.out.println("5: Remove a number in the bst");
 			System.out.println("6: Search a number in the bst");
-			
+			System.out.println("7: Sum of the tree");
+
 			option=in.nextInt();
 			switch(option){
 				case 0:
@@ -354,6 +352,9 @@ class BinarySearchTree{
 					System.out.println("What number do you want to search?");
 					x=in.nextInt();
 					bst.root.search(x);
+					break;
+				case 7:
+					System.out.println("Sum of the tree: " + bst.root.sum());
 					break;
 				default:
 					System.out.println("That is not an option");
