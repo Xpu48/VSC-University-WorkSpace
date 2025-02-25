@@ -184,8 +184,31 @@ class Node {
 	 * @return This node if this node should not be removed, left if this node should be removed.
 	 */
 	Node remove(int x){
-
-		//WRITE YOUR CODE HERE
+		if (data == x) {
+			if (left == null && right == null) {
+				return null;
+			}
+			if (left == null) {
+				return right;
+			}
+			if (right == null) {
+				return left;
+			}
+			Node rMin = getRMin();
+			data = rMin.data;
+			right = right.remove(rMin.data);
+			return this;
+		}
+		if (data > x) {
+			if (left != null) {
+				left = left.remove(x);
+			}
+			return this;
+		}
+		if (right != null) {
+			right = right.remove(x);
+		}
+		return this;
 	}
 	
 	/**
@@ -195,13 +218,19 @@ class Node {
 	 */
 	Node getRMin()
 	{
-		//WRITE YOUR CODE HERE
-        }
-
+		if (right == null) {
+			return null;
+		}
+		Node tmp = right;
+		while (tmp.left != null) {
+			tmp = tmp.left;
+		}
+		return tmp;
+	}
 }
 
 //An implementation of a binary search tree data structure
-class BinarySearchTree{ 
+class BinarySearchTree { 
 
 	Node root;
 	
@@ -287,7 +316,7 @@ class BinarySearchTree{
     public static void main(String[] args) 
     { 
         //create a new bst
-        BinarySearchTree bst = new BinarySearchTree(); 
+		BinarySearchTree bst = new BinarySearchTree(); 
         
         //Create variable to read from keyboard
         Scanner in=new Scanner(System.in);
@@ -364,5 +393,5 @@ class BinarySearchTree{
        } while(option!=0);
 
 	   in.close();
-    } 
-} 
+	} 
+}
