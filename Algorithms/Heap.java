@@ -25,14 +25,13 @@ class Heap {
     }
 
     public static int parent(int index) {
-        return 0;
+        return (index - 1) / 2;
     }
     public static int left(int index) {
-        return 0;
+        return 2 * index + 1;
     }
     public static int right(int index) {
-
-        return 0;
+        return 2 * index + 2;
     }
     
     public void maxHeapify(int i) {
@@ -83,7 +82,15 @@ class Heap {
     public Integer maximum() {
         return array.get(0);
     }
+
     public Integer extractMax() {
-        return 0;
+        if (heap_size < 1) {
+            throw new IllegalStateException("Heap underflow");
+        }
+        int max = array.get(0);
+        array.set(0, array.get(heap_size - 1));
+        heap_size--;
+        maxHeapify(0);
+        return max;
     }
 }
